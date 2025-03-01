@@ -19,6 +19,6 @@ RUN npm install -g serve
 
 COPY --from=builder /app/dist /app
 
-EXPOSE 80
+EXPOSE 443
 
-CMD ["serve", "-s", ".", "-l", "80"]
+CMD ["serve", "-s", ".", "-l", "443"]
