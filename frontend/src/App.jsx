@@ -17,7 +17,7 @@ const App = () => {
     setError(null); 
 
     try {
-      const response = await axios.post('http://localhost:5000/api/translate/', {
+      const response = await axios.post('http://localhost:8000/api/translate/', {
         text: transcript,
         source_lang: sourceLang,
         target_lang: targetLang,
