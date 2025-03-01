@@ -1,4 +1,4 @@
-
+# Build Stage
 FROM node:18 AS builder
 
 WORKDIR /app
@@ -9,16 +9,20 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-
-FROM node:18
-
-WORKDIR /app
-
-RUN npm install -g serve
+FROM nginx:alpine
 
 
-COPY --from=builder /app/dist /app
+WORKDIR /usr/share/nginx/html
 
-EXPOSE 5000 
+# Remove default Nginx static content
+RUN rm -rf ./*
 
-CMD ["serve", "-s", ".", "-l", "5000"]
+
+COPY --from=builder /app/dist .
+
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 80 
+
+CMD ["nginx", "-g", "daemon off;"]
