@@ -7,4 +7,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "healthcare_app.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "healthcare_app.wsgi:application"]
