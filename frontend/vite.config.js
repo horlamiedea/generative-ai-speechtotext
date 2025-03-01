@@ -7,8 +7,8 @@ export default defineConfig({
     outDir: 'dist',
   },
   server: {
-    host: '0.0.0.0', 
-    port: 80, 
+    host: '0.0.0.0',
+    port: 80,
     strictPort: true,
     allowedHosts: [
       'healthcareapp.eastus.cloudapp.azure.com',
