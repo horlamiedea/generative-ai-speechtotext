@@ -91,6 +91,12 @@ DATABASES = {
 
 CORS_ALLOW_ALL_ORIGINS = True
 
+CORS_ALLOWED_ORIGINS = [
+    "https://healthcareapp.eastus.cloudapp.azure.com",
+    "http://healthcareapp.eastus.cloudapp.azure.com",
+    "http://backend:8000"
+]
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
